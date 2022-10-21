@@ -96,25 +96,9 @@ From iOS 14, it's required to add `NSLocalNetworkUsageDescription` and `NSBonjou
 ```
 
 ## Install
-### CocoaPod
-- Add the following line to your Podfile
-```bash 
-pod 'atlantis-proxyman'
-```
 
 ### Swift Packages Manager
-- Add `https://github.com/ProxymanApp/atlantis` to your project by: Open Xcode -> File Menu -> Swift Packages -> Add Package Dependency...
-
-### Carthage
-1. Add to your Cartfile
-```
-github "ProxymanApp/atlantis"
-```
-2. Run `carthage update --use-xcframeworks`
-3. Drag Atlantis.framework from your project
-3. Create a Carthage Script as the [Carthage guideline](https://github.com/Carthage/Carthage#quick-start)  
-
-For Carthage with Xcode 12, please check out the workaround: https://github.com/Carthage/Carthage/blob/master/Documentation/Xcode12Workaround.md
+- Add `https://github.com/wanggh8/atlantis` to your project by: Open Xcode -> File Menu -> Swift Packages -> Add Package Dependency...
 
 ## WS/WSS Traffic
 From Atlantis 1.9.0+, Atlantis is capable of capturing all [WS/WSS Traffic](https://github.com/ProxymanApp/atlantis/releases/tag/1.9.0), which is made by URLSessionWebSocketTask, and send to Proxyman app.
