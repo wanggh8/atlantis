@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2190ECA6290288AE00E31D48 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_35 /* Atlantis+Manual.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_8 /* Atlantis+Manual.swift */; };
 		OBJ_36 /* Atlantis.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Atlantis.swift */; };
 		OBJ_37 /* AtlantisHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* AtlantisHelper.swift */; };
@@ -20,7 +21,6 @@
 		OBJ_45 /* Packages.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* Packages.swift */; };
 		OBJ_46 /* Runtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* Runtime.swift */; };
 		OBJ_47 /* Transporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* Transporter.swift */; };
-		OBJ_54 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -194,7 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_54 /* Package.swift in Sources */,
+				2190ECA6290288AE00E31D48 /* Package.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,7 +246,7 @@
 				INFOPLIST_FILE = Atlantis.xcodeproj/Atlantis_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MARKETING_VERSION = 1.18.1;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
@@ -258,7 +258,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
 				TARGET_NAME = Atlantis;
-				TVOS_DEPLOYMENT_TARGET = 13.0;
+				TVOS_DEPLOYMENT_TARGET = 11.0;
 				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Debug;
@@ -277,7 +277,7 @@
 				INFOPLIST_FILE = Atlantis.xcodeproj/Atlantis_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MARKETING_VERSION = 1.18.1;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
@@ -289,7 +289,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
 				TARGET_NAME = Atlantis;
-				TVOS_DEPLOYMENT_TARGET = 13.0;
+				TVOS_DEPLOYMENT_TARGET = 11.0;
 				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Release;
@@ -326,8 +326,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				LD = /usr/bin/true;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/ManifestAPI -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -package-description-version 5.2.0";
 				SWIFT_VERSION = 5.0;
+				TVOS_DEPLOYMENT_TARGET = 11.0;
 			};
 			name = Debug;
 		};
@@ -335,8 +337,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				LD = /usr/bin/true;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/ManifestAPI -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -package-description-version 5.2.0";
 				SWIFT_VERSION = 5.0;
+				TVOS_DEPLOYMENT_TARGET = 11.0;
 			};
 			name = Release;
 		};
