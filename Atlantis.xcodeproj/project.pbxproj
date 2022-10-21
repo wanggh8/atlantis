@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2190ECA6290288AE00E31D48 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_35 /* Atlantis+Manual.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_8 /* Atlantis+Manual.swift */; };
 		OBJ_36 /* Atlantis.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Atlantis.swift */; };
 		OBJ_37 /* AtlantisHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* AtlantisHelper.swift */; };
@@ -194,7 +193,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				2190ECA6290288AE00E31D48 /* Package.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
