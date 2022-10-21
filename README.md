@@ -81,6 +81,7 @@ You can get the `hostName` from Proxyman -> Certificate menu -> Install for iOS 
 - iOS 13.0+ / macOS 10.15+ / Mac Catalyst 13.0+
 - Xcode 11+
 - Swift 5.0+
+- Support compile on iOS 8.0+ / macOS 10.11+
 
 ### Required Configuration for iOS 14+
 From iOS 14, it's required to add `NSLocalNetworkUsageDescription` and `NSBonjourServices` to your info.plist
