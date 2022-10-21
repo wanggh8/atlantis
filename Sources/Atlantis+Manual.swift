@@ -7,6 +7,7 @@
 
 import Foundation
 
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 extension Atlantis {
 
     /// Handy func to manually add Request & Response to Atlantis, then sending to Proxyman app for inspecting.
@@ -185,6 +186,7 @@ extension Atlantis {
     }
 }
 
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 extension WebsocketMessagePackage.Message {
     var optionalData: Data? {
         switch self {

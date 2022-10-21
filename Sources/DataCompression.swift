@@ -36,6 +36,7 @@ import zlibLinux
 import zlib
 #endif
 
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 extension Data
 {
     /// Compresses the data.
@@ -274,6 +275,7 @@ extension Data
 
 
 /// Struct based type representing a Crc32 checksum.
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 struct Crc32: CustomStringConvertible
 {
     private static let zLibCrc32: ZLibCrc32FuncPtr? = loadCrc32fromZLib()
@@ -373,6 +375,7 @@ struct Crc32: CustomStringConvertible
 
 
 /// Struct based type representing a Adler32 checksum.
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 struct Adler32: CustomStringConvertible
 {
     private static let zLibAdler32: ZLibAdler32FuncPtr? = loadAdler32fromZLib()
@@ -438,7 +441,7 @@ struct Adler32: CustomStringConvertible
 }
 
 
-
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 fileprivate extension Data
 {
     func withUnsafeBytes<ResultType, ContentType>(_ body: (UnsafePointer<ContentType>) throws -> ResultType) rethrows -> ResultType
@@ -449,6 +452,7 @@ fileprivate extension Data
     }
 }
 
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 fileprivate extension Data.CompressionAlgorithm
 {
     var lowLevelType: compression_algorithm {
@@ -461,10 +465,10 @@ fileprivate extension Data.CompressionAlgorithm
     }
 }
 
-
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 fileprivate typealias Config = (operation: compression_stream_operation, algorithm: compression_algorithm)
 
-
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 fileprivate func perform(_ config: Config, source: UnsafePointer<UInt8>, sourceSize: Int, preload: Data = Data()) -> Data?
 {
     guard config.operation == COMPRESSION_STREAM_ENCODE || sourceSize > 0 else { return nil }
@@ -523,6 +527,7 @@ fileprivate func perform(_ config: Config, source: UnsafePointer<UInt8>, sourceS
 
 
 /// Compression level whose rawValue is based on the zlib's constants.
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 struct CompressionLevel: RawRepresentable {
 
     /// Compression level in the range of `0` (no compression) to `9` (maximum compression).
@@ -626,7 +631,7 @@ struct GzipError: Swift.Error {
 
 }
 
-
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 extension Data {
 
     /// Whether the receiver is compressed in gzip format.
@@ -768,7 +773,7 @@ extension Data {
 
 }
 
-
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 private struct DataSize {
 
     static let chunk = 2 ^ 14

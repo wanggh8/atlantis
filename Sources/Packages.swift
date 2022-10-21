@@ -10,12 +10,13 @@ import Foundation
 
 #if os(OSX)
 import AppKit
-typealias Image = NSImage
+typealias AtlImage = NSImage
 #elseif os(iOS) || targetEnvironment(macCatalyst)  || os(tvOS)
 import UIKit
-typealias Image = UIImage
+typealias AtlImage = UIImage
 #endif
 
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 struct ConnectionPackage: Codable, Serializable {
 
     let device: Device
@@ -29,7 +30,7 @@ struct ConnectionPackage: Codable, Serializable {
         currentProject.name = config.projectName
         self.device = currentDevice
         self.project = currentProject
-        self.icon = Image.appIcon?.getPNGData()
+        self.icon = AtlImage.appIcon?.getPNGData()
     }
 
     func toData() -> Data? {
@@ -42,6 +43,7 @@ struct ConnectionPackage: Codable, Serializable {
     }
 }
 
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 public final class TrafficPackage: Codable, CustomDebugStringConvertible, Serializable {
 
     public enum PackageType: String, Codable {
@@ -202,6 +204,7 @@ public final class TrafficPackage: Codable, CustomDebugStringConvertible, Serial
     }
 }
 
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 struct Device: Codable {
 
     var name: String
@@ -222,6 +225,7 @@ struct Device: Codable {
     }
 }
 
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 struct Project: Codable {
 
     static let current = Project()
@@ -235,6 +239,7 @@ struct Project: Codable {
     }
 }
 
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 public struct Header: Codable {
 
     public let key: String
@@ -246,6 +251,7 @@ public struct Header: Codable {
     }
 }
 
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 public final class Request: Codable {
 
     // MARK: - Variables
@@ -284,6 +290,7 @@ public final class Request: Codable {
     }
 }
 
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 public struct Response: Codable {
 
     // MARK: - Variables
@@ -310,6 +317,7 @@ public struct Response: Codable {
     }
 }
 
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 public struct CustomError: Codable {
 
     public let code: Int
@@ -327,6 +335,7 @@ public struct CustomError: Codable {
     }
 }
 
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 public struct WebsocketMessagePackage: Codable, Serializable {
 
     public enum MessageType: String, Codable {
@@ -391,9 +400,10 @@ public struct WebsocketMessagePackage: Codable, Serializable {
     }
 }
 
-extension Image {
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
+extension AtlImage {
 
-    static var appIcon: Image? {
+    static var appIcon: AtlImage? {
         #if os(OSX)
         if Thread.isMainThread {
             return NSApplication.shared.applicationIconImage
@@ -409,13 +419,13 @@ extension Image {
         guard let iconName = Bundle.main.infoDictionary?["CFBundleIconFile"] as? String else {
             return nil
         }
-        return Image(named: iconName)
+        return AtlImage(named: iconName)
         #elseif os(iOS) || os(tvOS)
         guard let iconsDictionary = Bundle.main.infoDictionary?["CFBundleIcons"] as? [String: Any],
               let primaryIconsDictionary = iconsDictionary["CFBundlePrimaryIcon"] as? [String: Any],
               let iconFiles = primaryIconsDictionary["CFBundleIconFiles"] as? [String],
               let lastIcon = iconFiles.last else { return nil }
-        return Image(named: lastIcon)
+        return AtlImage(named: lastIcon)
         #endif
     }
 

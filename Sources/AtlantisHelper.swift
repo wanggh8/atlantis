@@ -26,6 +26,7 @@ import Foundation
  */
 
 @objc(AtlantisHelper)
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 class AtlantisHelper: NSObject {
     static let dataSelector: String = "data"
     static let stringSelector: String = "string"

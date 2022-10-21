@@ -13,6 +13,7 @@ import Network
 import UIKit
 #endif
 
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 protocol Transporter {
 
     func start(_ config: Configuration)
@@ -20,11 +21,13 @@ protocol Transporter {
     func send(package: Serializable)
 }
 
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 protocol Serializable {
 
     func toData() -> Data?
 }
 
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 extension Serializable {
 
     func toCompressedData() -> Data? {
@@ -36,6 +39,7 @@ extension Serializable {
     }
 }
 
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 final class NetServiceTransport: NSObject {
 
     struct Constants {
@@ -87,6 +91,7 @@ final class NetServiceTransport: NSObject {
 
 // MARK: - Transporter
 
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 extension NetServiceTransport: Transporter {
 
     func start(_ config: Configuration) {
@@ -195,6 +200,7 @@ extension NetServiceTransport: Transporter {
 
 // MARK: - Private
 
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 extension NetServiceTransport {
 
     private func connectToService(_ service: NetService) {
@@ -294,6 +300,7 @@ extension NetServiceTransport {
 
 // MARK: - NetServiceBrowserDelegate
 
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 extension NetServiceTransport: NetServiceBrowserDelegate {
 
     func netServiceBrowser(_ browser: NetServiceBrowser, didFind service: NetService, moreComing: Bool) {
@@ -330,6 +337,7 @@ extension NetServiceTransport: NetServiceBrowserDelegate {
 
 // MARK: - NetServiceDelegate
 
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 extension NetServiceTransport: NetServiceDelegate {
 
     func netServiceDidResolveAddress(_ sender: NetService) {
@@ -347,6 +355,7 @@ extension NetServiceTransport: NetServiceDelegate {
 
 // MARK: - Private
 
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 extension NetServiceTransport {
 
     private func initNotification() {

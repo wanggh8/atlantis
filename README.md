@@ -1,3 +1,5 @@
+> This is a version that support compile when app has a minimum deployment target of iOS 8.0
+
 ![Atlantis: Debug iOS with ease](https://raw.githubusercontent.com/ProxymanApp/atlantis/main/images/cover.png)
 
 A lightweight and powerful iOS framework for intercepting HTTP/HTTPS Traffic from your app. No more messing around with proxy, certificate config. 

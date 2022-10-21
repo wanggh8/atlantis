@@ -70,10 +70,12 @@ extension URLSessionTask {
 
     static var AtlantisIDKey: UInt8 = 0
 
+    @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
     func setFromAtlantisFramework() {
         objc_setAssociatedObject(self, &URLSessionStreamTask.AtlantisIDKey, "_atlantis_URLSessionStreamTask", .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
     }
 
+    @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
     func isFromAtlantisFramework() -> Bool {
         if let _ = objc_getAssociatedObject(self, &URLSessionStreamTask.AtlantisIDKey) as? String {
             return true
