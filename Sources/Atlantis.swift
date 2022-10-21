@@ -9,6 +9,15 @@
 import Foundation
 import ObjectiveC
 
+public final class AtlantisManager: NSObject {
+    
+    @objc public class func start(hostName: String? = nil) {
+        if #available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *) {
+            Atlantis.start(hostName: hostName)
+        }
+    }
+}
+
 @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 public protocol AtlantisDelegate: AnyObject {
 
